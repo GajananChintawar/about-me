@@ -5,100 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        /* Resetting default styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        /* Body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+            background-color: #4e73df;
+            color: white;
+            padding: 40px 0;
             text-align: center;
+            position: relative;
+            margin-bottom: 50px;
         }
+
         header h1 {
-            margin: 0;
+            font-size: 3em;
+            font-weight: 600;
         }
+
+        /* Container styles */
         .container {
             width: 80%;
             margin: 0 auto;
             padding: 20px;
         }
-        .profile-image {
-            width: 150px;
-            height: 150px;
+
+        /* Profile image and info section */
+        .profile-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .profile-info img {
             border-radius: 50%;
-            display: block;
-            margin: 20px auto;
+            width: 180px;
+            height: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
-        .bio {
-            margin-top: 20px;
-            line-height: 1.6;
+
+        .profile-info img:hover {
+            transform: scale(1.1);
         }
-        .skills, .contact {
-            margin-top: 30px;
+
+        .profile-info .bio-text {
+            flex: 1;
+            padding-left: 20px;
         }
-        .skills ul, .contact ul {
-            list-style-type: none;
+
+        .profile-info .bio-text h2 {
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .profile-info .bio-text p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Section styles */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #4e73df;
+            margin-bottom: 15px;
+        }
+
+        .skills, .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skills ul, .contact-info ul {
+            list-style: none;
             padding: 0;
         }
-        .skills li, .contact li {
-            margin: 10px 0;
+
+        .skills li, .contact-info li {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
+
+        .skills li:hover, .contact-info li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer styles */
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #4e73df;
+            color: white;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 20px 0;
+            margin-top: 50px;
         }
+
+        footer p {
+            font-size: 1em;
+        }
+
     </style>
 </head>
 <body>
 
 <header>
     <h1>About Me</h1>
+    <p>Your personal journey and passions</p>
 </header>
 
 <div class="container">
-    <img src="your-image.jpg" alt="Profile Picture" class="profile-image">
-    
-    <section class="bio">
-        <h2>Hi, I'm [Your Name]</h2>
-        <p>
-            Welcome to my personal website! I'm a passionate [Your Profession or Hobby] based in [Your Location]. 
-            I love working on [mention some interests or projects] and continually seek new ways to challenge myself. 
-            When I'm not [working, creating, etc.], you'll find me [doing another hobby or activity].
-        </p>
+
+    <!-- Profile Information -->
+    <section class="profile-info">
+        <img src="profile.jpg" alt="Your Profile Picture">
+        <div class="bio-text">
+            <h2>Hi, I'm [Your Name]</h2>
+            <p>
+                I'm a [Your Profession] from [Your Location]. I am passionate about [mention your passions] and always looking for new ways to grow and learn. My journey in [your field or hobby] has been incredible, and I'm excited to see where it takes me next.
+            </p>
+        </div>
     </section>
 
+    <!-- Skills Section -->
     <section class="skills">
-        <h2>Skills</h2>
+        <h3 class="section-title">Skills</h3>
         <ul>
-            <li>[Skill 1]</li>
-            <li>[Skill 2]</li>
-            <li>[Skill 3]</li>
-            <!-- Add more skills as needed -->
+            <li>HTML & CSS</li>
+            <li>JavaScript & React</li>
+            <li>Python</li>
+            <li>Web Design & UX/UI</li>
+            <li>Project Management</li>
+            <!-- Add more skills -->
         </ul>
     </section>
 
-    <section class="contact">
-        <h2>Contact Me</h2>
+    <!-- Contact Information Section -->
+    <section class="contact-info">
+        <h3 class="section-title">Contact Information</h3>
         <ul>
-            <li>Email: [Your Email]</li>
-            <li>Phone: [Your Phone]</li>
-            <li>LinkedIn: [Your LinkedIn]</li>
-            <li>Twitter: [Your Twitter]</li>
-            <!-- Add more contact info or links as needed -->
+            <li>Email: your-email@example.com</li>
+            <li>Phone: 123-456-7890</li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">your-profile</a></li>
+            <li>GitHub: <a href="https://github.com/your-profile" target="_blank">your-profile</a></li>
+            <!-- Add more contact details -->
         </ul>
     </section>
+
 </div>
 
 <footer>
-    <p>&copy; [Year] [Your Name]. All rights reserved.</p>
+    <p>&copy; 2025 [Your Name]. All rights reserved.</p>
 </footer>
 
 </body>
